@@ -14,11 +14,11 @@ void AddBook(LinkList L)
 {
 	LinkList p = (LinkList)malloc(sizeof(LNode));
 	assert(p);
-	printf("ÇëÊäÈëÊéµÄID(10Î»):>");
+	printf("è¯·è¾“å…¥ä¹¦çš„ID(10ä½):>");
 	scanf("%s",&p->data.ID);
-	printf("ÇëÊäÈëÊéÃû(20×ÖÒÔÄÚ):>");
+	printf("è¯·è¾“å…¥ä¹¦å(20å­—ä»¥å†…):>");
 	scanf("%s",&p->data.name);
-	printf("ÇëÊäÈëÊéµÄ¼ÛÇ®:>");
+	printf("è¯·è¾“å…¥ä¹¦çš„ä»·é’±:>");
 	scanf("%d",&p->data.price);
 	p->next = L->next;
 	L->next = p;
@@ -30,7 +30,7 @@ void DeleteBook(LinkList L)
 	int num=1;
 	LinkList p=NULL,s;
 	while(num){
-		printf("ÇëÎÊÄúÒªÒÔÊ²Ã´·½Ê½½øĞĞÉ¾³ı\n\tA.ID\tB.name\nÇëÑ¡Ôñ:>");
+		printf("è¯·é—®æ‚¨è¦ä»¥ä»€ä¹ˆæ–¹å¼è¿›è¡Œåˆ é™¤\n\tA.ID\tB.name\nè¯·é€‰æ‹©:>");
 		rewind(stdin);
 		scanf("%c", &get);
 		if (get == 'A'||get=='B')
@@ -43,7 +43,7 @@ void DeleteBook(LinkList L)
 			s = NULL;
 		}
 		else
-			printf("ÊäÈë´íÎó£¬ÇëÖØĞÂÊäÈë\n");
+			printf("è¾“å…¥é”™è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥\n");
 	}
 }
 
@@ -52,7 +52,7 @@ void IDFind(LinkList *p, LinkList L)
 	char id[11];
 	do {
 		LinkList h = L;
-		printf("ÇëÊäÈëID:>");
+		printf("è¯·è¾“å…¥ID:>");
 		scanf("%s", id);
 		while (h)
 		{
@@ -63,7 +63,7 @@ void IDFind(LinkList *p, LinkList L)
 			}
 			h = h->next;
 		}
-		printf("Î´²éÕÒµ½ÄúËùÊäÈëµÄID,ÇëÖØĞÂÊäÈë\n");
+		printf("æœªæŸ¥æ‰¾åˆ°æ‚¨æ‰€è¾“å…¥çš„ID,è¯·é‡æ–°è¾“å…¥\n");
 	} while (1);
 }
 
@@ -72,7 +72,7 @@ void NameFind(LinkList *p, LinkList L)
 	char name[20];
 	do {
 		LinkList h = L;
-		printf("ÇëÊäÈëÊéÃû:>");
+		printf("è¯·è¾“å…¥ä¹¦å:>");
 		scanf("%s", name);
 		while (h)
 		{
@@ -83,7 +83,7 @@ void NameFind(LinkList *p, LinkList L)
 			}
 			h = h->next;
 		}
-		printf("Î´²éÕÒµ½ÄúËùÊäÈëµÄÊéÃû,ÇëÖØĞÂÊäÈë\n");
+		printf("æœªæŸ¥æ‰¾åˆ°æ‚¨æ‰€è¾“å…¥çš„ä¹¦å,è¯·é‡æ–°è¾“å…¥\n");
 	} while (1);
 }
 
@@ -96,7 +96,6 @@ void ShowBook(LinkList L)
 		printf("%-20s%-20s%d\n", p->data.ID, p->data.name, p->data.price);
 		p = p->next;
 	}
-	printf("%d\n", L->size);
 }
 
 void FindBook(LinkList L)
@@ -105,7 +104,7 @@ void FindBook(LinkList L)
 	int num = 1;
 	LinkList p = NULL,s;
 	do {
-		printf("ÇëÎÊÄúÒªÒÔÊ²Ã´ÑùµÄ·½Ê½½øĞĞ²éÕÒ\n\tA.ID\tB.name\nÇëÑ¡Ôñ:>");
+		printf("è¯·é—®æ‚¨è¦ä»¥ä»€ä¹ˆæ ·çš„æ–¹å¼è¿›è¡ŒæŸ¥æ‰¾\n\tA.ID\tB.name\nè¯·é€‰æ‹©:>");
 		rewind(stdin);
 		scanf("%c", &get);
 		if (get == 'A' || get == 'B')
@@ -117,7 +116,7 @@ void FindBook(LinkList L)
 			printf("%-20s%-20s%d\n", s->data.ID, s->data.name, s->data.price);
 		}
 		else
-			printf("ÊäÈë´íÎó£¬ÇëÖØĞÂÊäÈë\n");
+			printf("è¾“å…¥é”™è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥\n");
 	} while (num);
 }
 
@@ -126,7 +125,7 @@ void OrderBook(LinkList L)
 	char get;
 	int num = 1;
 	do {
-		printf("ÄúÏ£ÍûÒÔÊ²Ã´ÑùµÄ·½Ê½½øĞĞÅÅĞò\n\tA.ID\tB.name\nÇëÑ¡Ôñ:>");
+		printf("æ‚¨å¸Œæœ›ä»¥ä»€ä¹ˆæ ·çš„æ–¹å¼è¿›è¡Œæ’åº\n\tA.ID\tB.name\nè¯·é€‰æ‹©:>");
 		rewind(stdin);
 		scanf("%c", &get);
 		if (get == 'A' || get == 'B')
@@ -135,7 +134,7 @@ void OrderBook(LinkList L)
 			get == 'A' ? IDOrder(L) :NameOrder(L);
 		}
 		else
-			printf("ÊäÈë´íÎó£¬ÇëÖØĞÂÊäÈë\n");
+			printf("è¾“å…¥é”™è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥\n");
 	} while (num);
 }
 
@@ -196,7 +195,7 @@ void ChangeBook(LinkList L)
 	int num = 1;
 	LinkList p = NULL, s;
 	do {
-		printf("ÇëÎÊÄúÒªÒÔÊ²Ã´ÑùµÄ·½Ê½ÕÒµ½Êé\n\tA.ID\tB.name\nÇëÑ¡Ôñ:>");
+		printf("è¯·é—®æ‚¨è¦ä»¥ä»€ä¹ˆæ ·çš„æ–¹å¼æ‰¾åˆ°ä¹¦\n\tA.ID\tB.name\nè¯·é€‰æ‹©:>");
 		rewind(stdin);
 		scanf("%c", &get);
 		if (get == 'A' || get == 'B')
@@ -206,7 +205,7 @@ void ChangeBook(LinkList L)
 			s = p->next;
 			do
 			{
-				printf("ÇëÎÊÄúÒª¸ü¸Ä´ËÊéµÄÊ²Ã´\n\tA.ID\tB.name\tC.price\nÇëÑ¡Ôñ:>");
+				printf("è¯·é—®æ‚¨è¦æ›´æ”¹æ­¤ä¹¦çš„ä»€ä¹ˆ\n\tA.ID\tB.name\tC.price\nè¯·é€‰æ‹©:>");
 				rewind(stdin);
 				scanf("%c", &get);
 				if (get == 'A' || get == 'B' || get == 'C')
@@ -214,29 +213,29 @@ void ChangeBook(LinkList L)
 					num = 0;
 					if (get == 'A')
 					{
-						printf("ÇëÊäÈëÄúÒª¸ü¸ÄµÄID:>");
+						printf("è¯·è¾“å…¥æ‚¨è¦æ›´æ”¹çš„ID:>");
 						scanf("%s",&s->data.ID);
 					}
 					else if (get == 'B')
 					{
-						printf("ÇëÊäÈëÄúÒª¸ü¸ÄµÄĞÕÃû:>");
+						printf("è¯·è¾“å…¥æ‚¨è¦æ›´æ”¹çš„å§“å:>");
 						scanf("%s", &s->data.name);
 					}
 					else
 					{
-						printf("ÇëÊäÈëÄúÒª¸ü¸ÄµÄ¼ÛÇ®:>");
+						printf("è¯·è¾“å…¥æ‚¨è¦æ›´æ”¹çš„ä»·é’±:>");
 						scanf("%d", &s->data.price);
 					}
 				}
 				else
 				{
 					num = 1;
-					printf("ÊäÈë´íÎó£¬ÇëÖØĞÂÊäÈë\n");
+					printf("è¾“å…¥é”™è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥\n");
 				}
 			} while (num);
 		}
 		else
-			printf("ÊäÈë´íÎó£¬ÇëÖØĞÂÊäÈë\n");
+			printf("è¾“å…¥é”™è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥\n");
 	} while (num);
 
 }
